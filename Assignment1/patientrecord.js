@@ -5,24 +5,26 @@ const State = require('./ledger-api/state.js');
 class PatientRecord extends State {
 
     constructor(obj) {
-        super(PatientRecord.getClass(),[obj.username, obj.name]);
-        Object.assign(this,obj);
+        super(PatientRecord.getClass(), [obj.username, obj.name]);
+        Object.assign(this, obj);
     }
 
     //Helper Functions for reading and writing attributes
     getUsername() { return this.username }
-    setUsername(newUsername) { return this.username=newUsername }
+    setUsername(newUsername) { return this.username = newUsername }
     getName() { return this.name }
-    setName(newName) { return this.name=newName }
+    setName(newName) { return this.name = newName }
     getdob() { return this.dob }
-    setdob(newdob) { return this.dob=newdob }
+    setdob(newdob) { return this.dob = newdob }
     getgender() { return this.gender }
-    setgender(newgender) { return this.gender=newgender }
+    setgender(newgender) { return this.gender = newgender }
 
     getbloodtype() { return this.blood_type }
-    setbloodtype(newbloodtype) { return this.blood_type=newbloodtype }
+    setbloodtype(newbloodtype) { return this.blood_type = newbloodtype }
 
     //TASK 2 - Write a getter and a setter for a field called lastCheckupDate
+    get_last_checkup_date() { return this.lastCheckupDate }
+    set_last_checkup_date(new_last_checkup_date) { return this.lastCheckupDate = new_last_checkup_date }
 
     //Helper functions
 
@@ -39,7 +41,7 @@ class PatientRecord extends State {
     }
 
     static createInstance(username, name, dob, gender, blood_type) {
-        return new PatientRecord({username, name, dob, gender, blood_type});
+        return new PatientRecord({ username, name, dob, gender, blood_type });
     }
 
     static getClass() {
